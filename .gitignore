@@ -13,6 +13,10 @@
 # folders
 /out/
 
+# idea / LeetCode
+/.idea/leetcode/editor.xml
+/src/leetcode/editor/cn/*.json
+
 # Package Files #
 *.jar
 *.war

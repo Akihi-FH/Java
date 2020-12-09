@@ -25,7 +25,8 @@ import java.util.*;
 public class P15_ThreeSum {
     public static void main(String[] args) {
         Solution solution = new P15_ThreeSum().new Solution();
-        int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
+//        int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
+        int[] nums = new int[]{-1, 0, 0, 0, 1, -4};
         System.out.println(solution.threeSum(nums));
     }
 
@@ -44,7 +45,8 @@ public class P15_ThreeSum {
             Arrays.sort(nums);
             List<List<Integer>> lists = new ArrayList<>();
             for (int i = 0; i < n; i++) {
-                // 这里加i>0，避免索引出界
+                // 这里加i>0，避免当前指针移动后指向的元素与上次相同
+                // 同时保证每次循环指向的第一个元素不做此判断
                 if (i > 0 && nums[i] == nums[i - 1]) {
                     continue;
                 }
@@ -53,7 +55,8 @@ public class P15_ThreeSum {
                 // 第三个数的起始索引
                 int k = n - 1;
                 for (int j = i + 1; j < n; j++) {
-                    // 这里加j>i+1，避免与第一个数的索引冲突
+                    // 这里加j>i+1，避免当前指针移动后指向的元素与上次相同
+                    // 同时保证每次循环指向的第一个元素不做此判断，不然会与前一个指针冲突
                     if (j > i + 1 && nums[j] == nums[j - 1]) {
                         continue;
                     }
