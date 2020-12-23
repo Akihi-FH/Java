@@ -73,18 +73,22 @@ public class P3_LongestSubstringWithoutRepeatingCharacters {
             if (s == null || s.length() == 0) {
                 return 0;
             }
+            // right 为右指针
             int max = 0, right = 0, len = s.length();
             Set<Character> set = new HashSet<>();
-
+            // i 为左指针
             for (int i = 0; i < len; i++) {
                 /*if (i != 0) {
                     set.remove(s.charAt(i-1));
                 }*/
+                // 右指针小于字符串长度 且 右指针元素与集合中元素不重复
                 while (right < len && !set.contains(s.charAt(right))) {
                     set.add(s.charAt(right));
                     right++;
                 }
+                // 若不满足上述条件，
                 max = Math.max(max, right - i);
+                // 从集合中删除左指针的元素
                 set.remove(s.charAt(i));
             }
             return max;
