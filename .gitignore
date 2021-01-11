@@ -15,6 +15,7 @@
 
 # idea / LeetCode
 /.idea/leetcode/editor.xml
+/.idea/inspectionProfiles/Project_Default.xml
 /src/leetcode/editor/cn/*.json
 
 # Package Files #
