@@ -40,38 +40,11 @@ public class P78_Subsets {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-
-        /**
-         * 回溯
-         * @param nums
-         * @return
-         */
-        List<Integer> t = new ArrayList<Integer>();
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-
-        public List<List<Integer>> subsets(int[] nums) {
-            dfs(0, nums);
-            return ans;
-        }
-
-        public void dfs(int cur, int[] nums) {
-            if (cur == nums.length) {
-                ans.add(new ArrayList<>(t));
-                return;
-            }
-            t.add(nums[cur]);
-            dfs(cur + 1, nums);
-            t.remove(t.size() - 1);
-            dfs(cur + 1, nums);
-        }
-
-
         /**
          * n个数的数组，有2的n次方个子集
          * @param nums
          * @return
          */
-        /*
         public List<List<Integer>> subsets(int[] nums) {
             List<List<Integer>> list = new ArrayList<>();
             int n = nums.length;
@@ -93,7 +66,32 @@ public class P78_Subsets {
             }
             return list;
         }
-        */
+
+
+
+        /**
+         * 回溯
+         * @param nums
+         * @return
+         */
+        /*List<Integer> t = new ArrayList<Integer>();
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+
+        public List<List<Integer>> subsets(int[] nums) {
+            dfs(0, nums);
+            return ans;
+        }
+
+        public void dfs(int cur, int[] nums) {
+            if (cur == nums.length) {
+                ans.add(new ArrayList<>(t));
+                return;
+            }
+            t.add(nums[cur]);
+            dfs(cur + 1, nums);
+            t.remove(t.size() - 1);
+            dfs(cur + 1, nums);
+        }*/
     }
     //leetcode submit region end(Prohibit modification and deletion)
 
