@@ -26,6 +26,8 @@ import java.util.stream.Collectors;
 public class P46_Permutations {
     public static void main(String[] args) {
         Solution solution = new P46_Permutations().new Solution();
+        int[] nums = new int[]{1, 2, 3};
+        solution.permute(nums);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)

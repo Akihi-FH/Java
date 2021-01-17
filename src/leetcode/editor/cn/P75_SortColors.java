@@ -71,33 +71,6 @@ public class P75_SortColors {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
-        /**
-         * 双指针
-         * 两个指针分别用来交换 0和 1
-         *
-         * @param nums
-         */
-        public void sortColors(int[] nums) {
-            int n = nums.length;
-            int p0 = 0, p2 = n - 1;
-            for (int i = 0; i <= p2; i++) {
-                // 因为可能交换后还是 2，相当于遍历到 2，再次交换
-                // 交换后 若 i >p2，分类完成。不加索引限制可能会超出范围
-                while (i <= p2 && nums[i] == 2) {
-                    int tmp = nums[i];
-                    nums[i] = nums[p2];
-                    nums[p2] = tmp;
-                    p2--;
-                }
-                if (nums[i] == 0) {
-                    int tmp = nums[i];
-                    nums[i] = nums[p0];
-                    nums[p0] = tmp;
-                    p0++;
-                }
-            }
-
-        }
 
         /**
          * 双指针
@@ -105,7 +78,6 @@ public class P75_SortColors {
          *
          * @param nums
          */
-        /*
         public void sortColors(int[] nums) {
             int p0 = 0, p1 = 0;
             for (int i = 0; i < nums.length; i++) {
@@ -131,7 +103,38 @@ public class P75_SortColors {
                 }
             }
         }
-        */
+
+
+
+        /**
+         * 双指针
+         * 两个指针分别用来交换 0和 2
+         *
+         * @param nums
+         */
+        /*public void sortColors(int[] nums) {
+            int n = nums.length;
+            int p0 = 0, p2 = n - 1;
+            for (int i = 0; i <= p2; i++) {
+                // 因为可能交换后还是 2，相当于遍历到 2，再次交换
+                // 交换后 若 i >p2，分类完成。不加索引限制可能会超出范围
+                while (i <= p2 && nums[i] == 2) {
+                    int tmp = nums[i];
+                    nums[i] = nums[p2];
+                    nums[p2] = tmp;
+                    p2--;
+                }
+                if (nums[i] == 0) {
+                    int tmp = nums[i];
+                    nums[i] = nums[p0];
+                    nums[p0] = tmp;
+                    p0++;
+                }
+            }
+
+        }*/
+
+
 
         /**
          * 单指针，循环两次
