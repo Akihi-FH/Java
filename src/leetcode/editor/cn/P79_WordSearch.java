@@ -48,10 +48,11 @@ public class P79_WordSearch {
          */
         public boolean exist(char[][] board, String word) {
             int rows = board.length, cols = board[0].length;
+            boolean[][] visited = new boolean[rows][cols];
             // 对二维数组中每个点都作为起点来寻找word
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
-                    boolean exist = backtrack(board, word, new boolean[rows][cols], i, j, 0);
+                    boolean exist = backtrack(board, word, visited, i, j, 0);
                     if (exist) {
                         // 只要通过其中一个点找到了: true
                         return true;
