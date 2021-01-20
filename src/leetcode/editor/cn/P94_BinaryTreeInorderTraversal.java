@@ -70,7 +70,7 @@ public class P94_BinaryTreeInorderTraversal {
         /**
          * 颜色标记法
          *
-         * 根节点入栈
+         * 根节点入栈，若栈不为空，取出栈顶元素
          * 如果栈中遇到元素为TreeNode对象，则将其节点值入栈，
          *  然后将其右子树指针、该节点值、左子树指针依次入栈。
          * 如果中遇到元素为Integer对象，输出即保存到list中
