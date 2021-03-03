@@ -27,6 +27,18 @@ class Solution {
         return root;
     }
 
+    /**
+     * 重建
+     * @param preorder  前序遍历
+     * @param preStart  左/右 树在前序遍历中的起始位置
+     * @param preEnd    左/右 树在前序遍历中的结束位置
+     * @param inorder   中序遍历
+     * @param inStart   左/右 树在前序遍历中的起始位置
+     * @param inEnd     左/右 树在前序遍历中的结束位置
+     * @param map       保存了节点值在中序遍历中的位置，因为通过前序遍历可以知道根节点，通过中序遍历就可以知道
+     *                  左右子树有多少个节点，中序遍历中根节点在中间
+     * @return
+     */
     public TreeNode reBuildTree(int[] preorder, int preStart, int preEnd,
                                 int[] inorder, int inStart, int inEnd,
                                 Map<Integer, Integer> map) {
@@ -56,19 +68,6 @@ class Solution {
         return root;
     }
 }
-
-
-// Definition for a binary tree node.
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
-
 
 public class P07_BuildTree {
     public static void main(String[] args) {
