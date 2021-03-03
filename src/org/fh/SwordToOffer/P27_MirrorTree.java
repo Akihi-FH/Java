@@ -14,7 +14,7 @@ class MirrorTree {
      * @param root
      * @return
      */
-    /*public TreeNode mirrorTree(TreeNode root) {
+    public TreeNode mirrorTree(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -23,7 +23,7 @@ class MirrorTree {
         root.left = L;
         root.right = R;
         return root;
-    }*/
+    }
 
     /**
      * 迭代
@@ -35,7 +35,7 @@ class MirrorTree {
      * @param root
      * @return
      */
-    public TreeNode mirrorTree(TreeNode root) {
+    /*public TreeNode mirrorTree(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -56,9 +56,7 @@ class MirrorTree {
             }
         }
         return root;
-    }
-
-
+    }*/
 }
 
 public class P27_MirrorTree {
