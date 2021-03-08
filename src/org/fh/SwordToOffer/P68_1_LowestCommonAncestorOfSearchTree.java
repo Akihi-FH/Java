@@ -4,6 +4,9 @@ package org.fh.SwordToOffer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 二叉搜索树的最近公共祖先
+ */
 class LowestCommonAncestorOfSearchTree {
 
     /**
