@@ -8,7 +8,7 @@ class KthLargestNode {
     int k, kthVal;
 
     /**
-     * 中序遍历 的 倒序的第 k 个元素
+     * 中序遍历的倒序 的第 k 个元素
      * @param root
      * @param k
      * @return
