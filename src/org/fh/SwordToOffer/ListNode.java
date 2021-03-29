@@ -2,10 +2,10 @@ package org.fh.SwordToOffer;
 
 public class ListNode {
     //Definition for singly-linked list.
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 }

@@ -5,11 +5,13 @@ import java.util.Arrays;
 public class HeapSortTest {
     public static void main(String[] args) {
         int[] arr = new int[]{49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
-        maxHeapSort(arr);
-        System.out.println("大堆排序：" + Arrays.toString(arr));
+        int[] arr2 = new int[]{1};
+        maxHeapSort(arr2);
+        System.out.println("大堆排序：" + Arrays.toString(arr2));
 
         minHeapSort(arr);
         System.out.println("小堆排序：" + Arrays.toString(arr));
+
 
     }
 

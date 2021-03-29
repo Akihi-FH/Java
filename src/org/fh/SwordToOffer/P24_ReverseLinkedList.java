@@ -10,7 +10,7 @@ class ReverseLinkedList {
      * @param head
      * @return
      */
-    /*public ListNode reverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {
         ListNode pre = null, cur = head;
         while (cur != null) {
             ListNode nextNode = cur.next;
@@ -19,7 +19,7 @@ class ReverseLinkedList {
             cur = nextNode;
         }
         return pre;
-    }*/
+    }
 
     /**
      * 递归
@@ -30,6 +30,7 @@ class ReverseLinkedList {
      * @param head
      * @return
      */
+    /*
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -39,6 +40,7 @@ class ReverseLinkedList {
         head.next = null;
         return newHead;
     }
+    */
 }
 
 public class P24_ReverseLinkedList {
