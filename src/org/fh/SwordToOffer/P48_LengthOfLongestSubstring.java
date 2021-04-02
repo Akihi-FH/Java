@@ -1,7 +1,9 @@
 package org.fh.SwordToOffer;
 
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -14,7 +16,7 @@ class LengthOfLongestSubstring {
     }
 
     /**
-     * 双指针
+     * 双指针，滑动窗口思想
      *
      * @param s
      * @return
@@ -39,6 +41,29 @@ class LengthOfLongestSubstring {
             max = Math.max(max, r - i);
         }
         return max;
+    }
+
+    /**
+     * 动态规划
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstring2(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int res = 0, tmp = 0;
+        for (int j = 0; j < s.length(); j++) {
+            // i: 元素上一次出现的位置
+            int i = map.getOrDefault(s.charAt(j), -1);
+            // 更新元素的最新位置
+            map.put(s.charAt(j), j);
+            // tmp：以位置j的前一个位置的元素结尾的最长不重复子串，
+            // j-i：元素最新位置 减去 这个元素上一次出现的位置 i:
+            // 若 tmp < j-i，则i不包含在tmp包含的长度里面，则以j处元素结尾的最长不重复子串长度为：tmp+1
+            // 否则 i 在tmp所包含的长度里面，此时以j处元素结尾的最长不重复子串长度为：j-i
+            tmp = tmp < j - i ? tmp + 1 : j - i;
+            res = Math.max(res, tmp);
+        }
+        return res;
     }
 }
 
