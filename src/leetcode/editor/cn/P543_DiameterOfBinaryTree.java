@@ -52,8 +52,8 @@ public class P543_DiameterOfBinaryTree {
             if (root == null) {
                 return 0;
             }
-            int lNodes = depth(root.left);
-            int rNodes = depth(root.right);
+            int lNodes = depth(root.left);  // lNodes：左子树深度
+            int rNodes = depth(root.right); // rNodes：右子树深度
             nodes = Math.max(nodes, 1 + lNodes + rNodes); // 更新最长路径的节点数
             return 1 + Math.max(lNodes, rNodes); //返回当前树最大深度
         }

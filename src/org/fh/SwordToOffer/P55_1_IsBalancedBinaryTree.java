@@ -21,7 +21,7 @@ class IsBalancedBinaryTree {
                 && isBalanced(root.left)
                 && isBalanced(root.right);
     }
-
+    // 求树的深度
     public int treeDepth(TreeNode root) {
         return root == null ? 0 : 1 + Math.max(treeDepth(root.left), treeDepth(root.right));
     }

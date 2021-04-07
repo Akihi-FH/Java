@@ -104,7 +104,7 @@ public class P94_BinaryTreeInorderTraversal {
         }
 
         /**
-         * 递归
+         * 中序遍历  左-根-右
          */
         /*public List<Integer> inorderTraversal(TreeNode root) {
             List<Integer> res = new ArrayList<>();

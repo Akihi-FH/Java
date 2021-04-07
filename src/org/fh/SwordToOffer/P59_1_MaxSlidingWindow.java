@@ -35,7 +35,8 @@ class MaxSlidingWindow {
 
 
 
-    /*public int[] maxSlidingWindow(int[] nums, int k) {
+    /*
+    public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0 || k == 0) {
             return new int[0];
         }
@@ -64,7 +65,8 @@ class MaxSlidingWindow {
         }
 
         return res;
-    }*/
+    }
+    */
 }
 
 public class P59_1_MaxSlidingWindow {

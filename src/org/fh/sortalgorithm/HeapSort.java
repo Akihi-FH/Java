@@ -1,22 +1,23 @@
 package org.fh.sortalgorithm;
 
-import leetcode.editor.cn.P215_KthLargestElementInAnArray;
-
 import java.util.Arrays;
 
-public class BuildMaxHeap {
+public class HeapSort {
     public static void main(String[] args) {
-        BuildMaxHeap solution = new BuildMaxHeap();
+        HeapSort solution = new HeapSort();
         int[] nums = new int[]{3, 2, 1, 5, 6, 4};
 //        nums = new int[]{3,2,3,1,2,4,5,5,6};
 //        nums = new int[]{1};
-        solution.sort(nums);
+        solution.heapSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
-    //leetcode submit region begin(Prohibit modification and deletion)
-
-    public int sort(int[] nums) {
+    /**
+     * 堆排序 - 标准版
+     * @param nums
+     * @return
+     */
+    public int heapSort(int[] nums) {
         int n = nums.length;
         // 构建 一次 大顶堆
         buildMaxheap(nums, n);
