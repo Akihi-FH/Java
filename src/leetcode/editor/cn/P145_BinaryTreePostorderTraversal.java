@@ -20,6 +20,8 @@ package leetcode.editor.cn;
 import org.fh.SwordToOffer.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 public class P145_BinaryTreePostorderTraversal {
@@ -44,6 +46,11 @@ public class P145_BinaryTreePostorderTraversal {
      * }
      */
     class Solution {
+        /**
+         * 深度优先遍历
+         * @param root
+         * @return
+         */
         public List<Integer> postorderTraversal(TreeNode root) {
             List<Integer> res = new ArrayList<>();
             dfs(root, res);
@@ -57,6 +64,40 @@ public class P145_BinaryTreePostorderTraversal {
             dfs(root.left, res);
             dfs(root.right, res);
             res.add(root.val);
+        }
+
+
+        /**
+         * 迭代 - 栈
+         * @param root
+         * @return
+         */
+        public List<Integer> postorderTraversal_2(TreeNode root) {
+            List<Integer> res = new ArrayList<>();
+            if (root == null) {
+                return res;
+            }
+            Deque<TreeNode> stack = new LinkedList<>();
+            TreeNode pre = null; // 标记上一次访问的结点
+            while (root != null || !stack.isEmpty()) {
+                // 从根结点开始 把所有左子节点入栈
+                while (root != null) {
+                    stack.push(root);
+                    root = root.left;
+                }
+                // 出栈
+                root = stack.pop();
+                // 判断结点右没有右子树， 没有则该节点值加入结果集，标记为已访问过
+                if (root.right == null || root.right == pre) {
+                    res.add(root.val);
+                    pre = root;
+                    root = null;
+                } else { // 有 则该节点再次入栈，并将右子节点的所有左子节点入栈
+                    stack.push(root);
+                    root = root.right;
+                }
+            }
+            return res;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

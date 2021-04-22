@@ -57,6 +57,8 @@ package leetcode.editor.cn;
 import org.fh.SwordToOffer.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 public class P144_BinaryTreePreorderTraversal {
@@ -81,19 +83,53 @@ public class P144_BinaryTreePreorderTraversal {
      * }
      */
     class Solution {
+        /**
+         * 递归 深度优先遍历
+         *
+         * @param root
+         * @return
+         */
         public List<Integer> preorderTraversal(TreeNode root) {
             List<Integer> res = new ArrayList<>();
             dfs(root, res);
             return res;
         }
+
         // 前序遍历  根-左-右
         private void dfs(TreeNode root, List<Integer> res) {
             if (root == null) {
-                return ;
+                return;
             }
             res.add(root.val);
             dfs(root.left, res);
             dfs(root.right, res);
+        }
+
+        /**
+         * 迭代
+         *
+         * @param root
+         * @return
+         */
+        public List<Integer> preorderTraversal_2(TreeNode root) {
+            List<Integer> res = new ArrayList<>();
+            if (root == null) {
+                return res;
+            }
+            Deque<TreeNode> stack = new LinkedList<>();
+            TreeNode node = root;
+            while (!stack.isEmpty() || node != null) {
+                // 从根结点开始到 把左子节点都入栈 并将其值加入结果集
+                while (node != null) {
+                    res.add(node.val);
+                    stack.push(node);
+                    node = node.left;
+                }
+                // 左边遍历到底后，取出父节点，node设为 右子节点，继续上面的步骤
+                node = stack.pop();
+                node = node.right;
+            }
+            return res;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

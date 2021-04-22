@@ -96,8 +96,8 @@ public class P11_ContainerWithMostWater {
             int max = 0;
             for (int i = 0; i < length - 1; i++) {
                 for (int j = i + 1; j < length; j++) {
-                    int width = Math.min(height[i], height[j]);
-                    int tmp = width * (j - i);
+                    int h = Math.min(height[i], height[j]);
+                    int tmp = h * (j - i);
                     max = Math.max(max, tmp);
                 }
             }

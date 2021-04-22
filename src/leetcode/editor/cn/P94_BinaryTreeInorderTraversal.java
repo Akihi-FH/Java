@@ -68,6 +68,45 @@ public class P94_BinaryTreeInorderTraversal {
     class Solution {
 
         /**
+         * 中序遍历  左-根-右
+         */
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> res = new ArrayList<>();
+            inorder(res, root);
+            return res;
+        }
+         // 递归
+         public void inorder(List<Integer> res, TreeNode root){
+            if (root == null) {
+                return;
+            }
+            inorder(res, root.left);
+            res.add(root.val);
+            inorder(res, root.right);
+        }
+
+        /**
+         * 迭代
+         * @param root
+         * @return
+         */
+        /*public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> res = new ArrayList<>();
+            Deque<TreeNode> stack = new LinkedList<>();
+            while (root != null || !stack.isEmpty()) {
+                while (root != null) {
+                    stack.push(root);
+                    root = root.left;
+                }
+                root = stack.pop();
+                res.add(root.val);
+                root = root.right;
+            }
+            return res;
+        }*/
+
+
+        /**
          * 颜色标记法
          *
          * 根节点入栈，若栈不为空，取出栈顶元素
@@ -78,6 +117,7 @@ public class P94_BinaryTreeInorderTraversal {
          * @param root
          * @return
          */
+        /*
         public List<Integer> inorderTraversal(TreeNode root) {
             List<Integer> res = new ArrayList<>();
             Deque<Object> stack = new LinkedList<>();
@@ -102,44 +142,7 @@ public class P94_BinaryTreeInorderTraversal {
             }
             return res;
         }
-
-        /**
-         * 中序遍历  左-根-右
-         */
-        /*public List<Integer> inorderTraversal(TreeNode root) {
-            List<Integer> res = new ArrayList<>();
-            inorder(res, root);
-            return res;
-        }
-         // 递归
-         public void inorder(List<Integer> res, TreeNode root){
-            if (root == null) {
-                return;
-            }
-            inorder(res, root.left);
-            res.add(root.val);
-            inorder(res, root.right);
-        }*/
-
-        /**
-         * 迭代
-         * @param root
-         * @return
-         */
-        /*public List<Integer> inorderTraversal(TreeNode root) {
-            List<Integer> res = new ArrayList<>();
-            Deque<TreeNode> stack = new LinkedList<>();
-            while (root != null || !stack.isEmpty()) {
-                while (root != null) {
-                    stack.push(root);
-                    root = root.left;
-                }
-                root = stack.pop();
-                res.add(root.val);
-                root = root.right;
-            }
-            return res;
-        }*/
+        */
     }
     //leetcode submit region end(Prohibit modification and deletion)
 
