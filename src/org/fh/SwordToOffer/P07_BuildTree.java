@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-class Solution {
+class RebuildBinaryTree {
     /**
      * 重建二叉树
      *
@@ -71,7 +71,7 @@ class Solution {
 
 public class P07_BuildTree {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        RebuildBinaryTree solution = new RebuildBinaryTree();
         int[] preorder = new int[]{1, 2};
         int[] inorder = new int[]{2, 1};
         solution.buildTree(preorder, inorder);
