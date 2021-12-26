@@ -35,7 +35,7 @@
 
 package leetcode.editor.cn;
 
-import org.fh.SwordToOffer.ListNode;
+import utils.ListNode;
 
 public class P92_ReverseLinkedListIi {
     public static void main(String[] args) {

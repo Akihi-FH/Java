@@ -32,7 +32,7 @@
 
 package leetcode.editor.cn;
 
-import org.fh.SwordToOffer.ListNode;
+import utils.ListNode;
 
 public class P83_RemoveDuplicatesFromSortedList {
     public static void main(String[] args) {

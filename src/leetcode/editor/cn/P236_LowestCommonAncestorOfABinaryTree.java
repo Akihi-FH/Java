@@ -44,7 +44,7 @@
 
 package leetcode.editor.cn;
 
-import org.fh.SwordToOffer.TreeNode;
+import utils.TreeNode;
 
 public class P236_LowestCommonAncestorOfABinaryTree {
     public static void main(String[] args) {

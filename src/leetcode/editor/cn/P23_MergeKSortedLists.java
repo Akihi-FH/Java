@@ -47,7 +47,7 @@
 
 package leetcode.editor.cn;
 
-import org.fh.SwordToOffer.ListNode;
+import utils.ListNode;
 
 public class P23_MergeKSortedLists {
     public static void main(String[] args) {

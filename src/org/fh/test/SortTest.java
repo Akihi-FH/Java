@@ -15,24 +15,6 @@ public class SortTest {
 
 
     public static void sort(int[] arr, int left, int right) {
-        if (left >= right) {
-            return;
-        }
-        int i = left;
-        int j = right;
-        int k = arr[i];
-        while (i < j) {
-            while (i < j && k <= arr[j]) {
-                j--;
-            }
-            arr[i] =arr[j];
-            while (i < j && k >= arr[i]) {
-                i++;
-            }
-            arr[j] =arr[i];
-        }
-        arr[j] = k;
-        sort(arr, left,i-1);
-        sort(arr, i+1,right);
+
     }
 }

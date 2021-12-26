@@ -36,7 +36,7 @@
 
 package leetcode.editor.cn;
 
-import org.fh.SwordToOffer.TreeNode;
+import utils.TreeNode;
 
 public class P230_KthSmallestElementInABst {
     public static void main(String[] args) {

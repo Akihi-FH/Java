@@ -54,7 +54,7 @@
 
 package leetcode.editor.cn;
 
-import org.fh.SwordToOffer.TreeNode;
+import utils.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Deque;
